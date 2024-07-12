@@ -1,3 +1,4 @@
 Readme
-New
-New 2
+
+Create applications and approve them
+Upload photos
