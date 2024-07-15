@@ -1234,11 +1234,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Valeriya_Bugakova\\source\\Zayavki\\Zayavki\\Zayavki.csproj",
+      "projectUniqueName": "C:\\Users\\Valeriya_Bugakova\\Applications\\Zayavki\\Zayavki.csproj",
       "projectName": "Zayavki",
-      "projectPath": "C:\\Users\\Valeriya_Bugakova\\source\\Zayavki\\Zayavki\\Zayavki.csproj",
+      "projectPath": "C:\\Users\\Valeriya_Bugakova\\Applications\\Zayavki\\Zayavki.csproj",
       "packagesPath": "C:\\Users\\Valeriya_Bugakova\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Valeriya_Bugakova\\source\\Zayavki\\Zayavki\\obj\\",
+      "outputPath": "C:\\Users\\Valeriya_Bugakova\\Applications\\Zayavki\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Zayavki")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb001d9270d0b038e4b3761225f25dd364d29d3d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd899a2db9f7cd79e2eb386263e78a7537632b7b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Zayavki")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Zayavki")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

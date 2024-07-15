@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Valeriya_Bugakova\\source\\Zayavki\\Zayavki\\Zayavki.csproj": {}
+    "c:\\Users\\Valeriya_Bugakova\\Applications\\Zayavki\\Zayavki.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Valeriya_Bugakova\\source\\Zayavki\\Zayavki\\Zayavki.csproj": {
+    "c:\\Users\\Valeriya_Bugakova\\Applications\\Zayavki\\Zayavki.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Valeriya_Bugakova\\source\\Zayavki\\Zayavki\\Zayavki.csproj",
+        "projectUniqueName": "c:\\Users\\Valeriya_Bugakova\\Applications\\Zayavki\\Zayavki.csproj",
         "projectName": "Zayavki",
-        "projectPath": "C:\\Users\\Valeriya_Bugakova\\source\\Zayavki\\Zayavki\\Zayavki.csproj",
+        "projectPath": "c:\\Users\\Valeriya_Bugakova\\Applications\\Zayavki\\Zayavki.csproj",
         "packagesPath": "C:\\Users\\Valeriya_Bugakova\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Valeriya_Bugakova\\source\\Zayavki\\Zayavki\\obj\\",
+        "outputPath": "c:\\Users\\Valeriya_Bugakova\\Applications\\Zayavki\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

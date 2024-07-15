@@ -4,9 +4,9 @@ namespace Zayavki;
 
 public class ApplicationGetSvc : IApplicationGetSvc
 {
-    private readonly IApplicationService _applications;
+    private readonly IApplicationRepository _applications;
 
-    public ApplicationGetSvc(IApplicationService applications)
+    public ApplicationGetSvc(IApplicationRepository applications)
     {
         _applications = applications;
     }

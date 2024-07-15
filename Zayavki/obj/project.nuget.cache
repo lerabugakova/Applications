@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YL/c6op8be4=",
+  "dgSpecHash": "NzeoZ0K1KL0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Valeriya_Bugakova\\source\\Zayavki\\Zayavki\\Zayavki.csproj",
+  "projectFilePath": "c:\\Users\\Valeriya_Bugakova\\Applications\\Zayavki\\Zayavki.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Valeriya_Bugakova\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Valeriya_Bugakova\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

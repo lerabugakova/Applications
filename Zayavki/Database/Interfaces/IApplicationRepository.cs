@@ -2,7 +2,7 @@
 
 namespace Zayavki;
 
-public interface IApplicationService
+public interface IApplicationRepository
 {
     public List<ApplicationDbEntity> Get();
 

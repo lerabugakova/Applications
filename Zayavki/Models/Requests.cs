@@ -7,3 +7,5 @@ public record CreateApplicationsRequest(
     string ApplicationType, 
     string ApplicationPriority, 
     string ApplicationAuthor);
+
+public record LoginRequest(string UserName, string Password);

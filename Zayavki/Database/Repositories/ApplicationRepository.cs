@@ -3,11 +3,11 @@ using MongoDB.Driver;
 
 namespace Zayavki;
 
-public class ApplicationService : IApplicationService
+public class ApplicationRepository : IApplicationRepository
 {
     private readonly IMongoCollection<ApplicationDbEntity> _applications;
 
-    public ApplicationService(IOptions<ApplicationDatabaseSettings> settings)
+    public ApplicationRepository(IOptions<ApplicationDatabaseSettings> settings)
     {
         var client = new MongoClient(settings.Value.ConnectionString);
         var database = client.GetDatabase(settings.Value.DatabaseName);
