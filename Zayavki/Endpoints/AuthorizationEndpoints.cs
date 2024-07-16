@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Zayavki.MinimalApi.Applications;
 
-public class Authorization
+public class AuthorizationEndpoints
 {
     private const string Endpoint = "Authorization";
 
@@ -10,12 +10,12 @@ public class Authorization
     {
         app.MapPost("api/v1/authorization/login", Login)
             .WithTags(Endpoint)
-            .WithName($"{nameof(Authorization)}_{nameof(Login)}");
+            .WithName($"{nameof(AuthorizationEndpoints)}_{nameof(Login)}");
     }
 
     private static async Task<IResult> Login(
         [FromBody] LoginRequest request,
-        [FromServices] IAuthorizationLoginSvc handler,
+        [FromServices] IAuthorizationLoginsvc handler,
         CancellationToken cancellationToken)
     {
         var result = await handler.Handle(request, cancellationToken);

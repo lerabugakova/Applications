@@ -91,3 +91,11 @@ c:\Users\Valeriya_Bugakova\Applications\Zayavki\obj\Debug\net8.0\refint\Zayavki.
 c:\Users\Valeriya_Bugakova\Applications\Zayavki\obj\Debug\net8.0\Zayavki.pdb
 c:\Users\Valeriya_Bugakova\Applications\Zayavki\obj\Debug\net8.0\Zayavki.genruntimeconfig.cache
 c:\Users\Valeriya_Bugakova\Applications\Zayavki\obj\Debug\net8.0\ref\Zayavki.dll
+c:\Users\Valeriya_Bugakova\Applications\Zayavki\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+c:\Users\Valeriya_Bugakova\Applications\Zayavki\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+c:\Users\Valeriya_Bugakova\Applications\Zayavki\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+c:\Users\Valeriya_Bugakova\Applications\Zayavki\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+c:\Users\Valeriya_Bugakova\Applications\Zayavki\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+c:\Users\Valeriya_Bugakova\Applications\Zayavki\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+c:\Users\Valeriya_Bugakova\Applications\Zayavki\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+c:\Users\Valeriya_Bugakova\Applications\Zayavki\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

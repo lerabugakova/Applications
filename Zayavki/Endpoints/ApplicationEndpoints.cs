@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Zayavki.MinimalApi;
 
 namespace Zayavki.MinimalApi.Applications;
@@ -27,6 +28,7 @@ internal class ApplicationEndpoints
     /// <summary>
     /// Get application by id
     /// </summary>
+    [HttpGet(Name = "GetApplication"), Authorize]
     private static async Task<IResult> GetApplication(
         [FromRoute] Guid applicationId,
         [FromServices] IApplicationGetSvc handler,
@@ -45,6 +47,7 @@ internal class ApplicationEndpoints
     /// <param name="request"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
+    [HttpPost(Name = "CreateApplications"), Authorize]
     public static async Task<IResult> CreateApplications(
         [FromBody] CreateApplicationsRequest request,
         [FromServices] IApplicationCreateSvc handler,

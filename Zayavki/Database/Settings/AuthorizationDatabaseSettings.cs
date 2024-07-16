@@ -1,8 +1,8 @@
 ﻿namespace Zayavki;
 
-public class ApplicationDatabaseSettings
+public class AuthorizationDatabaseSettings
 {
-    public string ApplicationCollectionName { get; set; }
+    public string CollectionName { get; set; }
     public string ConnectionString { get; set; }
     public string DatabaseName { get; set; }
 }

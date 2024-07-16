@@ -1,4 +1,6 @@
-﻿namespace Zayavki;
+﻿using System.IdentityModel.Tokens.Jwt;
+
+namespace Zayavki;
 
 public record GetApplicationResponse(
     Guid ApplicationId,
@@ -10,3 +12,5 @@ public record GetApplicationResponse(
     string ApplicationExecutor,
     DateTime CreatedDate,
     DateTime UpdatedDate);
+
+public record LoginResponse(string UserName, string Role, string Token);

@@ -12,7 +12,7 @@ public class ApplicationRepository : IApplicationRepository
         var client = new MongoClient(settings.Value.ConnectionString);
         var database = client.GetDatabase(settings.Value.DatabaseName);
 
-        _applications = database.GetCollection<ApplicationDbEntity>(settings.Value.ApplicationCollectionName);
+        _applications = database.GetCollection<ApplicationDbEntity>(settings.Value.CollectionName);
     }
 
     public List<ApplicationDbEntity> Get() =>
