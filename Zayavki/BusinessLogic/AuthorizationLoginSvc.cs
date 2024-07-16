@@ -5,22 +5,26 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Zayavki;
 
-public class AuthorizationLoginSvc : IAuthorizationLoginsvc
+public class AuthorizationLoginSvc : IAuthorizationLoginSvc
 {
     private readonly IAuthorizationRepository _authorizationRepository;
+    private readonly IConfiguration _configuration;
 
-    public AuthorizationLoginSvc(IAuthorizationRepository authorizationRepository)
+    public AuthorizationLoginSvc(IAuthorizationRepository authorizationRepository, IConfiguration configuration)
     {
         _authorizationRepository = authorizationRepository;
+        _configuration = configuration;
+
+
     }
 
     public async Task<LoginResponse?> Handle(LoginRequest request, CancellationToken cancellationToken)
     {
-        var passwortBytes = Encoding.UTF8.GetBytes(request.Password);
-        var encryptedPassword = System.Convert.ToBase64String(passwortBytes);
+        var passwordBytes = Encoding.UTF8.GetBytes(request.Password);
+        var encryptedPassword = System.Convert.ToBase64String(passwordBytes);
         var user = await _authorizationRepository.GetUser(request.UserName, encryptedPassword, cancellationToken);
 
-        var token = GenerateAccessToken(request.Password);
+        var token = GenerateAccessToken(request.UserName);
 
         return user == null ? 
         null : 
@@ -28,7 +32,7 @@ public class AuthorizationLoginSvc : IAuthorizationLoginsvc
         Token: new JwtSecurityTokenHandler().WriteToken(token));
     }
 
-    private JwtSecurityToken GenerateAccessToken(string userName)
+private JwtSecurityToken GenerateAccessToken(string userName)
     {
         // Create user claims
         var claims = new List<Claim>
@@ -39,11 +43,11 @@ public class AuthorizationLoginSvc : IAuthorizationLoginsvc
 
         // Create a JWT
         var token = new JwtSecurityToken(
-            issuer: "https://localhost:5001",
-            audience: "https://localhost:5001",
+            issuer: _configuration["JwtSettings:Issuer"],
+            audience: _configuration["JwtSettings:Audience"],
             claims: claims,
             expires: DateTime.UtcNow.AddMinutes(60), // Token expiration time
-            signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("secretkey")),
+            signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"])),
                 SecurityAlgorithms.HmacSha256)
         );
 

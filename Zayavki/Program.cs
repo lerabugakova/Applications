@@ -1,4 +1,8 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Zayavki;
 using Zayavki.MinimalApi.Applications;
@@ -46,9 +50,29 @@ builder.Services.AddTransient<IApplicationCreateSvc, ApplicationCreateSvc>();
 builder.Services.AddTransient<IApplicationGetSvc, ApplicationGetSvc>();
 
 builder.Services.AddTransient<IAuthorizationRepository, AuthorizationRepository>();
-builder.Services.AddTransient<IAuthorizationLoginsvc, AuthorizationLoginSvc>();
+builder.Services.AddTransient<IAuthorizationLoginSvc, AuthorizationLoginSvc>();
 
- builder.Services.AddAuthorization();
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .Build();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = configuration["JwtSettings:Issuer"],
+            ValidAudience = configuration["JwtSettings:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings:SecretKey"]))
+        };
+    });
+
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -59,9 +83,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication();
+app.UseRouting();
+app.UseAuthorization();
 
 new ApplicationEndpoints().Register(app);
 new AuthorizationEndpoints().Register(app);
 
-app.UseHttpsRedirection();
 app.Run();

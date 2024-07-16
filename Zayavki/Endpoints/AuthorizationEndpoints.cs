@@ -15,7 +15,7 @@ public class AuthorizationEndpoints
 
     private static async Task<IResult> Login(
         [FromBody] LoginRequest request,
-        [FromServices] IAuthorizationLoginsvc handler,
+        [FromServices] IAuthorizationLoginSvc handler,
         CancellationToken cancellationToken)
     {
         var result = await handler.Handle(request, cancellationToken);

@@ -1,6 +1,6 @@
 ﻿namespace Zayavki;
 
-public interface IAuthorizationLoginsvc
+public interface IAuthorizationLoginSvc
 {
     Task<LoginResponse> Handle(LoginRequest request, CancellationToken cancellationToken);
 }
