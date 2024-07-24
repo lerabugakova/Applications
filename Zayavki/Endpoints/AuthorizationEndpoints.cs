@@ -18,6 +18,7 @@ public class AuthorizationEndpoints
         [FromServices] IAuthorizationLoginSvc handler,
         CancellationToken cancellationToken)
     {
+        //var request = new LoginRequest(userName, password);
         var result = await handler.Handle(request, cancellationToken);
 
         return Results.Ok(result);
