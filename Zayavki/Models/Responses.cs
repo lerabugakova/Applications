@@ -1,15 +1,12 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-
-namespace Zayavki;
+﻿namespace Zayavki;
 
 public record GetApplicationResponse(
     Guid ApplicationId,
-    string ApplicationName, 
-    string ApplicationDescription,
-    string ApplicationType, 
-    string ApplicationPriority, 
-    string ApplicationAuthor,
-    string ApplicationExecutor,
+    string Abonent, 
+    string Address,
+    string Incident, 
+    string Duty, 
+    string Type,
     DateTime CreatedDate,
     DateTime UpdatedDate);
 

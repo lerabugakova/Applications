@@ -16,12 +16,11 @@ public class ApplicationCreateSvc : IApplicationCreateSvc
         var result = await _applications.CreateAsync(new ApplicationDbEntity
         {
             Id = Guid.NewGuid(),
-            ApplicationName = request.ApplicationName,
-            ApplicationDescription = request.ApplicationDescription,
-            ApplicationType = "New",
-            ApplicationPriority = request.ApplicationPriority,
-            ApplicationAuthor = request.ApplicationAuthor,
-            ApplicationExecutor = "",
+            Abonent = request.Abonent,
+            Address = request.Address,
+            Type = "New",
+            Incident = request.Incident,
+            Duty = request.Duty,
             CreatedDate = DateTime.Now,
             UpdatedDate = DateTime.Now
         }, cancellationToken);

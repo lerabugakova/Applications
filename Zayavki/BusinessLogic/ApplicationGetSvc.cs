@@ -17,12 +17,11 @@ public class ApplicationGetSvc : IApplicationGetSvc
         return result == null? null : new GetApplicationResponse
         (
             ApplicationId : result.Id,
-            ApplicationName : result.ApplicationName,
-            ApplicationDescription : result.ApplicationDescription,
-            ApplicationType : result.ApplicationType,
-            ApplicationPriority : result.ApplicationPriority,
-            ApplicationAuthor : result.ApplicationAuthor,
-            ApplicationExecutor : result.ApplicationExecutor,
+            Abonent : result.Abonent,
+            Address : result.Address,
+            Incident : result.Incident,
+            Duty : result.Duty,
+            Type : result.Type,
             CreatedDate : result.CreatedDate,
             UpdatedDate : result.UpdatedDate
         );

@@ -2,10 +2,9 @@
 
 public record GetApplicationsRequest(Guid ApplicationId);
 public record CreateApplicationsRequest(
-    string ApplicationName, 
-    string ApplicationDescription,
-    string ApplicationType, 
-    string ApplicationPriority, 
-    string ApplicationAuthor);
+    string Abonent, 
+    string Address,
+    string Incident, 
+    string Duty);
 
 public record LoginRequest(string UserName, string Password);

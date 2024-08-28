@@ -21,7 +21,7 @@ public class AuthorizationLoginSvc : IAuthorizationLoginSvc
     public async Task<LoginResponse?> Handle(LoginRequest request, CancellationToken cancellationToken)
     {
         var passwordBytes = Encoding.UTF8.GetBytes(request.Password);
-        var encryptedPassword = System.Convert.ToBase64String(passwordBytes);
+        var encryptedPassword = Convert.ToBase64String(passwordBytes);
         var user = await _authorizationRepository.GetUser(request.UserName, encryptedPassword, cancellationToken);
 
         var token = GenerateAccessToken(request.UserName);
